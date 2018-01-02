@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0
+}
+
+.mat-list-item .material-icons {
+    font-size: 16px;
+    padding: 0
+}
+
+.mat-list-item:hover button {
+    display: block;
+}
+
+.mat-list-item /deep/ .mat-checkbox-label {
+    margin: 10px 0;
+}

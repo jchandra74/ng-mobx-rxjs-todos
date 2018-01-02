@@ -1,0 +1,24 @@
+<mat-card>
+        <mat-toolbar color="primary">
+            Mobx RxJs Todos
+            <button mat-fab class="fab-add" (click)="todoDialog()"><mat-icon>add</mat-icon></button>
+        </mat-toolbar>
+
+
+    <button mat-button (click)="checkAll()"><mat-icon>check_box</mat-icon></button>
+    <button mat-button (click)="unCheckAll()"><mat-icon>check_box_outline_blank</mat-icon></button>
+
+    <button mat-button (click)="switchFilter()"><mat-icon>list</mat-icon> {{ filterType }}</button>
+
+    <mat-card-content>
+        <app-todos [todos]="todos | async" (complete)="complete($event)" (remove)="remove($event)"></app-todos>
+    </mat-card-content>
+</mat-card>
+
+<app-dialog
+    [title]="'New Task'"
+    [placeholder]="'What do you need to do?'"
+    [okText]="okButtonText"
+    [value] = "fieldValue"
+    (valueEmitted)="addTodo($event)"
+    [showPrompt]="showDialog"></app-dialog>

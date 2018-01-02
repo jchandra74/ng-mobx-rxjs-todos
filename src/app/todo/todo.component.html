@@ -1,0 +1,3 @@
+<mat-checkbox (change)="complete.emit(todo)" [checked]="todo.completed">
+    <span [class.completed]="todo.completed">{{ todo.title }}</span></mat-checkbox>
+<button mat-mini-fab (click)="remove.emit(todo)"><mat-icon>delete_forever</mat-icon></button>
